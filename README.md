@@ -1,9 +1,21 @@
-# CC local dev template
+# CC local dev template (Cookiecutter Python Project Template)
 
-
+## Clone repository using cookiecutter
+Clone the project template using cookiecutter. Hence, make
+sure to install cookiecutter using either (prefered way)
+```bash
+pip install cookiecutter
+```
+or
+```bash
+conda install -c conda-forge cookiecutter
+```
+Once cookiecutter is available clone the project template using
+```bash
+cookiecutter https://git.ica.ia-hc.net/grp-ds-ai/cc-local-dev-template.git
+```
 
 ## Getting started
-
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
