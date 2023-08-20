@@ -29,7 +29,7 @@
 	// More info: https://containers.dev/implementors/json_reference/#port-attributes
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "chmod +x /workspaces/{{ cookiecutter.project_name }}/.devcontainer/postCreateCommand.sh && /workspaces/{{ cookiecutter.project_name }}/.devcontainer/postCreateCommand.sh",
+	"postCreateCommand": "chmod +x /workspaces/{{ cookiecutter.project_name }}/.devcontainer/postCreateCommand.sh && sh /workspaces/{{ cookiecutter.project_name }}/.devcontainer/postCreateCommand.sh",
 	"runArgs": [
 		"--user",
 		"vscode"

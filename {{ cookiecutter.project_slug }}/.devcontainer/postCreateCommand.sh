@@ -1,3 +1,4 @@
-project_name="{{ cookiecutter.project_name }}"
-echo source /workspaces/$project_name/tools/initialize_venv.sh >> ~/.bashrc
+#project_name="{{ cookiecutter.project_name }}"
+SCRIPT_DIR_PARENT=$( cd -- "$( dirname -- "$(dirname -- "${BASH_SOURCE[0]}")" )" &> /dev/null && pwd )
+echo source $SCRIPT_DIR_PARENT/tools/initialize_venv.sh >> ~/.bashrc
 sudo apt-get --yes update && sudo apt-get --yes upgrade

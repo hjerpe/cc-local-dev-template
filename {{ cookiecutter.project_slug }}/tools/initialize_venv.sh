@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Set the path to your virtual environment
-project_name="{{ cookiecutter.project_name }}"
-venv_path="/workspaces/$project_name/venvs"
+#project_name="{{ cookiecutter.project_name }}"
+SCRIPT_DIR_PARENT=$( cd -- "$( dirname -- "$(dirname -- "${BASH_SOURCE[0]}")" )" &> /dev/null && pwd )
+venv_path="$SCRIPT_DIR_PARENT/venvs"
 default_venv="default_venv"
 echo "$venv_path/$default_venv"
-# Check if the virtual environment directory exists
+# Check if the virtual environment directory does not exists
 if [ ! -d "$venv_path/$default_venv" ] ; then
     echo "Virtual environment does not exis"
     echo "Create environment $venv_path/$default_venv"
