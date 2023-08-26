@@ -1,4 +1,4 @@
-# CC local dev template (Cookiecutter Python Project Template)
+# Cookiecutter Python Local Dev Template
 
 ## Clone repository using cookiecutter
 Clone the project template using cookiecutter. Hence, make
