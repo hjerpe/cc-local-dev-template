@@ -12,5 +12,5 @@ conda install -c conda-forge cookiecutter
 ```
 Once cookiecutter is available copy the project template using
 ```bash
-cookiecutter [https://git.ica.ia-hc.net/grp-ds-ai/cc-local-dev-template.git](https://github.com/hjerpe/cc-local-dev-template.git)
+cookiecutterhttps://github.c om/hjerpe/cc-local-dev-template.git
 ```
