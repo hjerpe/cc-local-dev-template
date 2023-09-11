@@ -13,7 +13,8 @@ if [ ! -d "$venv_path/$default_venv" ] ; then
     python3 -m venv $venv_path/$default_venv --system-site-packages --upgrade-deps
     source "$venv_path/$default_venv/bin/activate"
     echo "Installing requirements.txt"
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
+    pip3 install ipykernel
     echo "Create ipykernel $default_venv"
     # Install ipykernel
     python -m ipykernel install --user --name=$default_venv

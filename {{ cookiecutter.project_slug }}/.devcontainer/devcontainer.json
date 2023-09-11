@@ -18,6 +18,7 @@
 				"VisualStudioExptTeam.vscodeintellicode",
 				"ms-azuretools.vscode-docker",
 				"GitHub.copilot",
+				"GitHub.copilot-chat"
 			]
 		}
 	},
