@@ -12,5 +12,5 @@ conda install -c conda-forge cookiecutter
 ```
 Once cookiecutter is available copy the project template using
 ```bash
-cookiecutterhttps://github.c om/hjerpe/cc-local-dev-template.git
+cookiecutterhttps://github.com/hjerpe/cc-local-dev-template.git
 ```
