@@ -17,8 +17,10 @@
 				"ms-python.vscode-pylance",
 				"VisualStudioExptTeam.vscodeintellicode",
 				"ms-azuretools.vscode-docker",
+				"eamodio.gitlens",
 				"GitHub.copilot",
 				"GitHub.copilot-chat"
+				"hediet.vscode-drawio"
 			]
 		}
 	},
