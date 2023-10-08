@@ -1,9 +1,5 @@
 FROM mcr.microsoft.com/devcontainers/python:0-3.10
 
-#USER root
-# RUN apt update \
-#    && DEBIAN_FRONTEND=noninteractive apt install -y \
-#    rm -rf /var/lib/apt/lists/*
 USER root
 RUN apt-get update \
     && apt-get upgrade -y \
