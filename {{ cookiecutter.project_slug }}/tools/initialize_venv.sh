@@ -14,6 +14,8 @@ if [ ! -d "$venv_path/$default_venv" ] ; then
     source "$venv_path/$default_venv/bin/activate"
     echo "Installing requirements.txt"
     pip3 install -r requirements.txt
+    echo "Install pre-commit hooks"
+    pre-commit install
     pip3 install ipykernel
     echo "Create ipykernel $default_venv"
     # Install ipykernel
