@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Set the path to your virtual environment
-#project_name="{{ cookiecutter.project_name }}"
 SCRIPT_DIR_PARENT=$( cd -- "$( dirname -- "$(dirname -- "${BASH_SOURCE[0]}")" )" &> /dev/null && pwd )
 venv_path="$SCRIPT_DIR_PARENT/venvs"
 default_venv="default_venv"
