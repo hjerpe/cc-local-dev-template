@@ -7,7 +7,7 @@ default_venv="default_venv"
 echo "$venv_path/$default_venv"
 # Check if the virtual environment directory does not exists
 if [ ! -d "$venv_path/$default_venv" ] ; then
-    echo "Virtual environment does not exis"
+    echo "Virtual environment does not exist"
     echo "Create environment $venv_path/$default_venv"
     python3 -m venv $venv_path/$default_venv --system-site-packages --upgrade-deps
     source "$venv_path/$default_venv/bin/activate"
