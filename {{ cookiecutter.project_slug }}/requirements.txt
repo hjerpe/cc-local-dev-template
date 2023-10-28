@@ -1,4 +1,6 @@
 python-dotenv
-jupyterlab
+notebook
 mypy
 pre-commit
+click
+pyyaml

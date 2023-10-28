@@ -4,7 +4,7 @@ USER root
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y vim tree \
-    && apt-get install pre-commit \
+    && apt-get install -y pre-commit \
     && apt-get clean  # This line cleans up the package lists to reduce image size
 
 ENV USER=vscode
