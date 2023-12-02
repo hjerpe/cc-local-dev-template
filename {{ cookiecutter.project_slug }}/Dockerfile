@@ -12,4 +12,11 @@ USER $USER
 
 WORKDIR /home/$USER
 COPY ./.docker_requirements.txt .
-RUN pip install -r .docker_requirements.txt
+COPY ./.docker_requirements_scientific.txt .
+
+ARG DOCKER_IMAGE_TYPE
+RUN if [ "$DOCKER_IMAGE_TYPE" = "minimal" ]; then \
+        pip install -r .docker_requirements.txt; \
+    else \
+        pip install -r .docker_requirements_scientific.txt; \
+    fi

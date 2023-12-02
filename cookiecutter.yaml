@@ -1,0 +1,7 @@
+docker_image:
+  type: str
+  description: "Choose the Docker image type"
+  default: "scientific"
+  options:
+    - "scientific"
+    - "minimal"

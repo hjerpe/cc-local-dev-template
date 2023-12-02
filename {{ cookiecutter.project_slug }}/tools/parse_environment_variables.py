@@ -43,7 +43,7 @@ def parse_yaml_file_to_environment_variables(filename: str) -> Dict:
             os.environ[key] = value
         return data
 
-        
+
 def get_parent_directory():
     # Get the main file's path
     main_file_path = sys.argv[0]
