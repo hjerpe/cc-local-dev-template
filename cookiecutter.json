@@ -1,5 +1,5 @@
 {
     "project_name": "CC Local Development Template",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-    "docker_image": ["scientific", "minimal"]
+    "docker_image": ["with-pytorch", "base"]
 }
