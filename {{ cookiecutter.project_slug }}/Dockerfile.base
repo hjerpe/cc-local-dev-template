@@ -8,15 +8,16 @@ RUN apt-get update \
     && apt-get clean
 
 ENV USER=vscode
+ENV PATH="/home/${USER}/.local/bin:${PATH}"
+
 USER $USER
 WORKDIR /home/$USER
 
-COPY ./.docker_requirements.txt .
-RUN pip install -r .docker_requirements.txt
+# Ensure .local/bin exists
+RUN mkdir -p /home/${USER}/.local/bin
 
-# We'll install scientific packages in a separate layer
-ARG DOCKER_IMAGE_TYPE
-RUN if [ "$DOCKER_IMAGE_TYPE" = "with-pytorch" ]; then \
-        COPY ./..docker_requirements_pytorch.txt .
-        RUN pip install -r ..docker_requirements_pytorch.txt; \
-    fi
+COPY ./.docker_requirements.txt .
+RUN pip install --user --no-warn-script-location -r .docker_requirements.txt
+
+# Add .local/bin to PATH in .bashrc to persist for interactive sessions
+RUN echo 'export PATH="/home/${USER}/.local/bin:${PATH}"' >> /home/${USER}/.bashrc
