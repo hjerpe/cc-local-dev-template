@@ -2,8 +2,8 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"name": "{{ cookiecutter.project_slug }}",
-	"image": "{{ cookiecutter.project_slug }}-box:0.1",
+	"name": "ds_container_{{ cookiecutter.docker_image }}",
+	"image": "ds_container_{{ cookiecutter.docker_image }}-box:0.1",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Configure tool-specific properties.
