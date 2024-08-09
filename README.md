@@ -1,7 +1,7 @@
 # Cookiecutter Python Local Dev Template
 
 ## Clone repository using cookiecutter
-Clone the project template using cookiecutter. Hence, make
+Clone the project template using cookiecutter. Make
 sure to install cookiecutter using either
 ```bash
 pip install cookiecutter
