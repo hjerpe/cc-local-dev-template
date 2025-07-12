@@ -8,9 +8,9 @@ repos:
     -   id: check-added-large-files
     -   id: check-ast
     -   id: check-json
-        # since the devcontainer-file is not JSON but "JSONWithComments"
-        exclude: .devcontainer/devcontainer.json
+        exclude : .devcontainer/devcontainer.json # Exclude devcontainer.json
     -   id: check-executables-have-shebangs
+        exclude: ^
     -   id: check-merge-conflict
     -   id: check-toml
     -   id: check-xml
@@ -33,17 +33,17 @@ repos:
         args: ['--django'] # Argument 'django' checks that test file names start with "test"
 
 -   repo: https://github.com/psf/black
-    rev: 22.6.0
+    rev: 25.1.0
     hooks:
     -   id: black
 
 -   repo: https://github.com/kynan/nbstripout
-    rev: 0.6.1
+    rev: 0.8.1
     hooks:
     -   id: nbstripout
 
 -   repo: https://github.com/hadialqattan/pycln
-    rev: v2.1.2
+    rev: v2.5.0
     hooks:
     -   id: pycln
 
