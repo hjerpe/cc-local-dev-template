@@ -6,4 +6,4 @@ USER root
 
 USER $USER
 COPY ./.docker_requirements_pytorch.txt .
-RUN pip install --user --no-warn-script-location -r .docker_requirements_pytorch.txt
+RUN pip install --no-cache-dir --no-warn-script-location -r .docker_requirements_pytorch.txt
