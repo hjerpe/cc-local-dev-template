@@ -1,0 +1,11 @@
+# Production Configuration
+# Overrides and extends default configuration for production
+
+# Logging configuration
+logging:
+  level: WARNING
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"
+
+# Production-specific settings
+debug: false

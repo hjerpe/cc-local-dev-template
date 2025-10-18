@@ -1,23 +1,52 @@
-FROM mcr.microsoft.com/devcontainers/python:0-3.10
+FROM mcr.microsoft.com/devcontainers/python:3.12
 
 USER root
 
+# Update system packages and install required tools
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y vim tree pre-commit \
-    && apt-get clean
+    && apt-get install -y \
+        vim \
+        tree \
+        pre-commit \
+        git \
+        curl \
+        build-essential \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
+# Install Node.js LTS
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install global npm packages as root
+RUN npm install -g @playwright/mcp
+
+# Set up user environment
 ENV USER=vscode
-ENV PATH="/home/${USER}/.local/bin:${PATH}"
+ENV USER_HOME=/home/${USER}
+ENV PATH="${USER_HOME}/.local/bin:${USER_HOME}/.cargo/bin:${PATH}"
 
 USER $USER
-WORKDIR /home/$USER
+WORKDIR $USER_HOME
 
-# Ensure .local/bin exists
-RUN mkdir -p /home/${USER}/.local/bin
+# Create necessary directories
+RUN mkdir -p ${USER_HOME}/.local/bin ${USER_HOME}/.cargo/bin
 
-COPY ./.docker_requirements.txt .
-RUN pip install --no-cache-dir -r .docker_requirements.txt
+# Install uv (Python package manager)
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Add .local/bin to PATH in .bashrc to persist for interactive sessions
-RUN echo 'export PATH="/home/${USER}/.local/bin:${PATH}"' >> /home/${USER}/.bashrc
+# Persist PATH changes for interactive sessions
+RUN echo 'export PATH="${USER_HOME}/.local/bin:${USER_HOME}/.cargo/bin:${PATH}"' >> ${USER_HOME}/.bashrc
+
+# Set up git configuration defaults (can be overridden)
+RUN git config --global init.defaultBranch main \
+    && git config --global pull.rebase false
+
+# Create logs directory for application
+RUN mkdir -p ${USER_HOME}/logs
+
+# Health check to ensure uv is working
+RUN uv --version

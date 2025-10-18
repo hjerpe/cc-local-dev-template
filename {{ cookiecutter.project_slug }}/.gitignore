@@ -135,3 +135,11 @@ dbt/logs
 
 # Environment
 venvs/
+.venv/
+
+# uv
+.python-version
+uv.lock
+
+# Logs directory
+logs/

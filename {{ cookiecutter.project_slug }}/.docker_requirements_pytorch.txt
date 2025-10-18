@@ -1,3 +1,0 @@
-# Deep Learning (uncomment if needed)
-# tensorflow==2.8.0
-torch
