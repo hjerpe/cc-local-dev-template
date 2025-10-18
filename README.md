@@ -63,7 +63,6 @@ your-project/
 ├── Dockerfile.base                # Base Docker image
 ├── docker-build.sh                # Docker build script
 ├── pyproject.toml                 # Project configuration & dependencies
-├── requirements.txt               # Legacy requirements file
 ├── setup.sh                       # Environment setup script
 └── README.md                      # Project documentation
 ```
