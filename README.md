@@ -1,6 +1,6 @@
 # Cookiecutter Python Development Template
 
-A Python project starter with `uv` package management and Python 3.12.
+A Python AI/ML project starter with `uv` package management and Python 3.12.
 
 ## Quick Start
 
@@ -40,17 +40,31 @@ The generated project includes:
 
 ```
 your-project/
-├── src/your_project_package/     # Main package source
+├── .devcontainer/                 # VS Code DevContainer config
+│   ├── devcontainer.json          # Container configuration
+│   └── postCreateCommand.sh       # Post-create setup script
+├── src/your_project/              # Main package source
 │   ├── data/                      # Data processing modules
 │   ├── models/                    # ML models
 │   └── utils/                     # Utilities (config, logging)
 ├── notebooks/                     # Jupyter notebooks
 ├── tests/                         # Test files
 ├── scripts/                       # Helper scripts
-├── config/                        # Configuration files
-├── pyproject.toml                 # Project configuration
+│   ├── format.sh                  # Code formatting
+│   ├── test.sh                    # Run tests
+│   └── quality-check.sh           # Full quality check
+├── config/                        # Configuration files (YAML)
+│   ├── default.yaml               # Default configuration
+│   ├── development.yaml           # Development config
+│   └── production.yaml            # Production config
+├── .env.example                   # Environment variables
+├── .gitignore                     # Git ignore patterns
+├── .pre-commit-config.yaml        # Pre-commit hooks config
+├── Dockerfile.base                # Base Docker image
+├── docker-build.sh                # Docker build script
+├── pyproject.toml                 # Project configuration & dependencies
+├── requirements.txt               # Legacy requirements file
 ├── setup.sh                       # Environment setup script
-├── CLAUDE.md                      # Claude Code guidance
 └── README.md                      # Project documentation
 ```
 

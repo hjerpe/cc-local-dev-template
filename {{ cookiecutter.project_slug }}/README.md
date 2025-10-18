@@ -32,7 +32,7 @@ This will:
 
 ```bash
 # Run commands using uv
-uv run python -m {{ cookiecutter.project_slug }}_package
+uv run python -m {{ cookiecutter.project_slug }}
 
 # Run tests
 uv run pytest
@@ -59,16 +59,16 @@ uv sync
 
 ```
 .
-├── src/{{ cookiecutter.project_slug }}_package/  # Main package source code
-│   ├── data/                                      # Data processing modules
-│   ├── models/                                    # ML models
-│   └── utils/                                     # Utility functions (config, logging)
-├── notebooks/                                     # Jupyter notebooks
-├── tests/                                         # Test files
-├── scripts/                                       # Helper scripts
-├── config/                                        # Configuration files (YAML)
-├── pyproject.toml                                 # Project configuration & dependencies
-└── setup.sh                                       # Environment setup script
+├── src/{{ cookiecutter.project_slug }}/  # Main package source code
+│   ├── data/                             # Data processing modules
+│   ├── models/                           # ML models
+│   └── utils/                            # Utility functions (config, logging)
+├── notebooks/                            # Jupyter notebooks
+├── tests/                                # Test files
+├── scripts/                              # Helper scripts
+├── config/                               # Configuration files (YAML)
+├── pyproject.toml                        # Project configuration & dependencies
+└── setup.sh                              # Environment setup script
 ```
 
 ## Configuration
@@ -77,7 +77,7 @@ Configuration files are stored in `config/` directory:
 - `config/config-prod.yml`: Production configuration
 - `config/config-ver.yml`: Version/development configuration
 
-Use the utility functions in `src/{{ cookiecutter.project_slug }}_package/utils/config.py` to load configurations.
+Use the utility functions in `src/{{ cookiecutter.project_slug }}/utils/config.py` to load configurations.
 
 ## Docker Development
 

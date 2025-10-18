@@ -1,7 +1,0 @@
-docker_image:
-  type: str
-  description: "Choose the Docker image type"
-  default: "base"
-  options:
-    - "with-pytorch"
-    - "base"

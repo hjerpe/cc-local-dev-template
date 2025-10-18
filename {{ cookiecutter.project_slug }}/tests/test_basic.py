@@ -5,9 +5,9 @@ import pytest
 
 def test_import():
     """Test that the package can be imported."""
-    import {{ cookiecutter.project_slug }}_package
+    import {{ cookiecutter.project_slug }}
 
-    assert {{ cookiecutter.project_slug }}_package.__version__ == "0.1.0"
+    assert {{ cookiecutter.project_slug }}.__version__ == "0.1.0"
 
 
 def test_sample_fixture(sample_data):

@@ -1,22 +1,21 @@
 #!/bin/bash
-# stop on error
+# Build Docker image for AI/ML development environment
 set -e
 
-source docker-name.sh
+# Configuration
+PROJECT_NAME="{{ cookiecutter.project_slug }}"
+IMAGE_NAME="${PROJECT_NAME}_ai_ml_box"
+IMAGE_TAG="latest"
+FULL_IMAGE_NAME="${IMAGE_NAME}:${IMAGE_TAG}"
 
-# Extract the base name and tag
-base_name=$(echo $image_name | cut -d':' -f1)
-tag=$(echo $image_name | cut -d':' -f2)
+echo "Building Docker image: ${FULL_IMAGE_NAME}"
 
-# Build the base image
-docker build -f Dockerfile.base -t "${base_name}-base:${tag}" .
+# Build the image
+docker build -f Dockerfile.base -t "${FULL_IMAGE_NAME}" .
 
-# If the image type is with_pytorch, build the PyTorch image
-if [[ $image_name == *"with_pytorch"* ]]; then
-    docker build --build-arg BASE_IMAGE="${base_name}-base:${tag}" -f Dockerfile.pytorch -t "$image_name" .
-else
-    # For the default image, we just tag the base image
-    docker tag "${base_name}-base:${tag}" "$image_name"
-fi
-
-echo "Built image: $image_name"
+echo "Successfully built image: ${FULL_IMAGE_NAME}"
+echo ""
+echo "To use this image with VS Code Dev Containers:"
+echo "  1. Open this project in VS Code"
+echo "  2. Press Cmd+Shift+P (Mac) or Ctrl+Shift+P (Windows/Linux)"
+echo "  3. Select 'Dev Containers: Reopen in Container'"

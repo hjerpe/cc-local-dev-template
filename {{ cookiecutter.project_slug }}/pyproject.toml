@@ -48,7 +48,7 @@ Homepage = "https://github.com/{{ cookiecutter.project_slug }}/{{ cookiecutter.p
 Repository = "https://github.com/{{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/{{ cookiecutter.project_slug }}_package"]
+packages = ["src/{{ cookiecutter.project_slug }}"]
 
 [tool.black]
 line-length = 88
@@ -72,7 +72,7 @@ extend-exclude = '''
 profile = "black"
 multi_line_output = 3
 line_length = 88
-known_first_party = ["{{ cookiecutter.project_slug }}_package"]
+known_first_party = ["{{ cookiecutter.project_slug }}"]
 
 [tool.pytest.ini_options]
 minversion = "7.0"
